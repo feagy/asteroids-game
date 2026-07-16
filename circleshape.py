@@ -1,4 +1,5 @@
 import pygame
+from constants import LINE_WIDTH
 
 class CircleShape(pygame.sprite.Sprite):
     containers: tuple[pygame.sprite.Group, ...]
@@ -14,7 +15,12 @@ class CircleShape(pygame.sprite.Sprite):
         self.radius = radius
 
     def draw(self, screen: pygame.Surface) -> None:
-        pass
+        pygame.draw.polygon(
+            surface = screen,
+            color = "white",
+            points = self.triangle(),
+            width = LINE_WIDTH       
+        )
 
     def update(self, dt: float) -> None:
         pass
