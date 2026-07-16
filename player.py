@@ -20,7 +20,8 @@ class Player(CircleShape):
     
     def move(self, dt:float) -> None:
         self.position += pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SPEED * dt
-
+    
+    #override
     def update(self, dt: float) -> None:
         keys = pygame.key.get_pressed()
 
